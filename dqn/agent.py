@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import functools
 import os
 import random
 import time
@@ -201,7 +202,7 @@ class Agent(BaseModel):
           64, [3, 3], [1, 1], initializer, activation_fn, self.cnn_format, name='l3')
 
       shape = self.l3.get_shape().as_list()
-      self.l3_flat = tf.reshape(self.l3, [-1, reduce(lambda x, y: x * y, shape[1:])])
+      self.l3_flat = tf.reshape(self.l3, [-1, functools.reduce(lambda x, y: x * y, shape[1:])])
 
       if self.dueling:
         self.value_hid, self.w['l4_val_w'], self.w['l4_val_b'] = \
