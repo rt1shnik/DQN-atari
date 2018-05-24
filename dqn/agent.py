@@ -249,7 +249,7 @@ class Agent(BaseModel):
           64, [3, 3], [1, 1], initializer, activation_fn, self.cnn_format, name='target_l3')
 
       shape = self.target_l3.get_shape().as_list()
-      self.target_l3_flat = tf.reshape(self.target_l3, [-1, reduce(lambda x, y: x * y, shape[1:])])
+      self.target_l3_flat = tf.reshape(self.target_l3, [-1, functools.reduce(lambda x, y: x * y, shape[1:])])
 
       if self.dueling:
         self.t_value_hid, self.t_w['l4_val_w'], self.t_w['l4_val_b'] = \
