@@ -51,7 +51,7 @@ class Environment(object):
 
   @property
   def lives(self):
-    return self.env.ale.lives()
+    return self.env.unwrapped.ale.lives()
 
   @property
   def state(self):
