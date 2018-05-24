@@ -1,7 +1,9 @@
-import gym
 import random
-import numpy as np
+
+import gym
+
 from .utils import rgb2gray, imresize
+
 
 class Environment(object):
   def __init__(self, config):

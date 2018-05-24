@@ -1,16 +1,19 @@
 from __future__ import print_function
+
 import os
-import time
 import random
+import time
+
 import numpy as np
-from tqdm import tqdm
 import tensorflow as tf
+from tqdm import tqdm
 
 from .base import BaseModel
 from .history import History
-from .replay_memory import ReplayMemory
 from .ops import linear, conv2d, clipped_error
+from .replay_memory import ReplayMemory
 from .utils import get_time, save_pkl, load_pkl
+
 
 class Agent(BaseModel):
   def __init__(self, config, environment, sess):

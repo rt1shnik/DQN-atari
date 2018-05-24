@@ -1,7 +1,8 @@
-import time
-import numpy as np
-import tensorflow as tf
 import sys
+import time
+
+import numpy as np
+
 if (sys.version_info[0]==2):
   import cPickle
 elif (sys.version_info[0]==3):
